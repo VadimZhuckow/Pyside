@@ -144,40 +144,40 @@ class Window(QtWidgets.QWidget):
         self.spinBox.valueChanged.connect(self.onSpinBoxChanged)
         self.dateTimeEdit.dateTimeChanged.connect(self.onDateTimeEditChanged)
 
-    def onPushButtonLineEditClicked(self) -> None:
+    def onPushButtonLineEditClicked(self):
         self.plainTextEditLog.appendPlainText(self.lineEdit.text())
 
-    def onPushButtonComboBoxClicked(self) -> None:
+    def onPushButtonComboBoxClicked(self):
         self.plainTextEditLog.appendPlainText(self.comboBox.currentText())
 
-    def onPushButtonTextEditClicked(self) -> None:
+    def onPushButtonTextEditClicked(self):
         self.plainTextEditLog.appendPlainText(self.textEdit.toPlainText())
 
-    def onPushButtonPlainTextEditClicked(self) -> None:
+    def onPushButtonPlainTextEditClicked(self):
         self.plainTextEditLog.appendPlainText(self.plainTextEdit.toPlainText())
 
-    def onPushButtonSpinBoxClicked(self) -> None:
+    def onPushButtonSpinBoxClicked(self):
         self.plainTextEditLog.appendPlainText(str(self.spinBox.value()))
 
-    def onPushButtonDoubleSpinBoxClicked(self) -> None:
+    def onPushButtonDoubleSpinBoxClicked(self):
         self.plainTextEditLog.appendPlainText(str(self.doubleSpinBox.value()))
 
-    def onPushButtonTimeEditClicked(self) -> None:
+    def onPushButtonTimeEditClicked(self):
         self.plainTextEditLog.appendPlainText(self.timeEdit.time().toString())
 
-    def onPushButtonDateTimeEditClicked(self) -> None:
+    def onPushButtonDateTimeEditClicked(self):
         self.plainTextEditLog.appendPlainText(self.dateTimeEdit.dateTime().toString())
 
-    def onPushButtonClearLogClicked(self) -> None:
+    def onPushButtonClearLogClicked(self):
         self.plainTextEditLog.clear()
 
-    def onComboBoxChanged(self, text: str) -> None:
+    def onComboBoxChanged(self, text: str):
         self.plainTextEditLog.appendPlainText(text)
 
-    def onSpinBoxChanged(self, value: int) -> None:
+    def onSpinBoxChanged(self, value: int):
         self.plainTextEditLog.appendPlainText(str(value))
 
-    def onDateTimeEditChanged(self, dateTime: QtCore.QDateTime) -> None:
+    def onDateTimeEditChanged(self, dateTime: QtCore.QDateTime):
         self.plainTextEditLog.appendPlainText(dateTime.toString())
 
 
