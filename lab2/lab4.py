@@ -67,20 +67,13 @@ class Window(QtWidgets.QWidget):
             self.ui.lcdNumber.display(int(hex(value)[2:], 16))
 
     def load_settings(self):
-        settings = QSettings("MyCompany", "MyApp")
+        settings = QSettings()
         last_value = settings.value("lcdValue", 0, type=int)
         last_format = settings.value("lcdFormat", 0, type=int)
 
         self.ui.lcdNumber.display(last_value)
         self.ui.comboBox.setCurrentIndex(last_format)
-
         self.update_lcd_format()
-
-    def closeEvent(self, event):
-        settings = QSettings("MyCompany", "MyApp")
-        settings.setValue("lcdValue", self.ui.lcdNumber.value())
-        settings.setValue("lcdFormat", self.ui.comboBox.currentIndex())
-        event.accept()
 
 
 if __name__ == "__main__":
