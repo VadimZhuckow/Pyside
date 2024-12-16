@@ -94,7 +94,7 @@ class SystemInfoWidget(QtWidgets.QWidget):
         self.tabs.addTab(self.service_tab, "Работающие службы")
 
         self.task_tab = TaskSchedulerWidget()
-        self.tabs.addTab(self.task_tab, "Задачи планировщика")
+        self.tabs.addTab(self.task_tab, "Планировщик задач")
 
         main_layout = QtWidgets.QVBoxLayout(self)
         main_layout.addWidget(self.tabs)
